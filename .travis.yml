@@ -6,6 +6,7 @@ script:
     - yarn lint
     - yarn build
 after_script:
+    if: branch = master
     - cd dist
     - git init
     - git config user.name "junyong"
