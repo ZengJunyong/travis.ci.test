@@ -5,12 +5,15 @@ install: yarn
 script:
     - yarn lint
     - yarn build
-after_script:
-    if: branch = master
-    - cd dist
-    - git init
-    - git config user.name "junyong"
-    - git config user.email "junyong.zeng@rebilly.com"
-    - git add .
-    - git commit -m "Update docs"
-    - git push -f "https://${GH_TOKEN}@github.com/ZengJunyong/travis.ci.test.git" master:gh-pages
+jobs:
+    include:
+        -   stage: deploy
+            if: branch = master
+            script:
+                - cd dist
+                - git init
+                - git config user.name "junyong"
+                - git config user.email "junyong.zeng@rebilly.com"
+                - git add .
+                - git commit -m "Update docs"
+                - git push -f "https://${GH_TOKEN}@github.com/ZengJunyong/travis.ci.test.git" master:gh-pages
