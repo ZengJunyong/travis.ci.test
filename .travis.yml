@@ -4,16 +4,12 @@ node_js:
 install: yarn
 script:
     - yarn lint
-jobs:
-    include:
-        -   stage: deploy
-            if: branch = master
-            script:
-                - yarn build
-                - cd dist
-                - git init
-                - git config user.name "junyong"
-                - git config user.email "junyong.zeng@rebilly.com"
-                - git add .
-                - git commit -m "Update docs"
-                - git push -f "https://${GH_TOKEN}@github.com/ZengJunyong/travis.ci.test.git" master:gh-pages
+    - yarn build
+after_script:
+    - cd dist
+    - git init
+    - git config user.name "junyong"
+    - git config user.email "junyong.zeng@rebilly.com"
+    - git add .
+    - git commit -m "Update docs"
+    - git push -f "https://${GH_TOKEN}@github.com/ZengJunyong/travis.ci.test.git" master:gh-pages
