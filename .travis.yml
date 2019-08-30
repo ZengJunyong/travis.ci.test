@@ -12,8 +12,4 @@ after_script:
     - git config user.email "junyong.zeng@rebilly.com"
     - git add .
     - git commit -m "Update docs"
-    - git push -f "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
-env:
-    global:
-        -   GH_REF: github.com/ZengJunyong/travis.ci.test.git
-        -   secure: "SOWMl0AU7TiN4/Vyn3DCkwFtlC8P55PNdrL7fBLSjFVrGkIN9yQMM3czS4Z2INVCLp32rjDvWofCHt2JwvEsehUsO+FcWKLuo8p5e8vHYexZau0njj6BCPpqpgZRrtnA7uUY7xOZv39z+11zaRPI3OpT+APySfEUKv7cp1IqBer2IznuUz1SjorwQBjqy+JnDyeH45ee8UdHZATwTivVjjtNZMLlDa7TPzid1Q2dqMfDtDqVP7t8SlaUiNIgKzWJJ2ilS0JuoU0Xl0UnLMYDrGvE0MEl/+IulueKZwsXXh3RZ2XYhEZ7J0OxPpQHTfqA7oBhiPzk/GoQxE8MPyc6+zGASXhhdh46NqOSgWAzmjTrtBCcYt2T7DtioC2L4Lb4W9Up3LfYb7txjs8SVA8aHkcp5/6t9jIwdzPUaSc3rScqVYhRVERLgEKkZer4yj2drGPtcDfaxsKQrVXNcr4XY6sFcL/AOyJuoQJS6XkKyuHL/b65boqgRfYiWFEojJPIJVM0aL475b7eCeDKTFUJ8EVHQjhtW4NDwj2HMF1ogLa0+TBwybV05wNkMS+4pzb6EfdZtowwygeYzB4dvC3j0reLVsLTpEl4sfjk2jtT9Npxdh03CJo/FGTB0NnPbVuDw4D9iWszkMPKuAq96KxRnkZrxtqAWevoWe6DxdUQBsk="
+    - git push -f "https://${GH_TOKEN}@github.com/ZengJunyong/travis.ci.test.git" master:gh-pages
