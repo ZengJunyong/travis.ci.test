@@ -4,12 +4,12 @@ node_js:
 install: yarn
 script:
     - yarn lint
-    - yarn build
 jobs:
     include:
         -   stage: deploy
             if: branch = master
             script:
+                - yarn build
                 - cd dist
                 - git init
                 - git config user.name "junyong"
